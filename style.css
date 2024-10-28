@@ -1,0 +1,795 @@
+/*
+Theme Name: psd Gator Theme
+Theme URI: http://example.com
+Author: AK
+Author URI: http://example.com
+Description: A brief description of your theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: psd-gator-theme
+*/
+
+@font-face {
+    font-family: 'Integral CF';
+    src: url('.assets/fonts/Integral-CF/integralcf-heavy.otf') format('opentype');
+    /* font-weight: normal;
+    font-style: normal; */
+}
+
+
+
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'satoshi', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.new-arrivals h2, 
+.dress-style h2, 
+.reviews h2 {
+    font-family: 'Integral CF', sans-serif;
+    color: #000000;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+.input-group{
+    flex-wrap: nowrap;
+}
+
+
+/* Header Section (promo bar, nav menu, search box) */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul{
+    margin-bottom: 0;
+}
+
+.promo-bar {
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+.promo-bar.no-active {
+    display: none;
+}
+
+.promo-bar-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 75px;
+}
+
+.promo-bar p{
+    margin:0!important;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.promo-bar a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.promo-bar img {
+    cursor: pointer;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+    padding: 1rem 6.25rem;
+}
+
+.menu-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.mobile-menu {
+    display: none;/* hide hamburger menu style on large screens*/
+    flex-direction: column;
+    cursor: pointer;
+}
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+.logo a,
+.our-brand h3 {
+    font-family: 'Integral CF', sans-serif;
+    color: #000000;
+    font-weight: 700;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.shop-menu-arrow{
+padding-left: 5px;
+}
+
+.submenu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position it absolutely under the menu item */
+  background-color: #444; /* Background color of the submenu */
+  list-style: none; /* Removes bullet points */
+  padding: 10px 0; /* Adds vertical padding */
+  width: 150px; /* Fixed width for the submenu */
+  z-index: 1000; /* Ensures it appears on top of other content */
+}
+
+.submenu.active {
+  display: block; /* Show when active */
+}
+
+
+.submenu li a {
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: #555;
+}
+
+.search-cart-profile{
+    display: flex;
+    gap:12px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.cart-profile{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+input[type="search"] {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0 62px 62px 0;
+    background: #F0F0F0;
+    flex-grow: 1;
+}
+
+input[type="search"]:focus{
+    outline: none;
+}
+
+.search-btn, .search-btn:hover{
+    border-radius: 62px 0 0 62px;
+    padding:12px 16px;
+    background-color:#F0F0F0;
+    border: none;
+}
+
+/* buttons style */
+.promo-bar-close-btn,
+.cart-btn,
+.profile-btn,
+.carousel-prev,
+.carousel-next {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Featured Section */
+.featured {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+}
+.featured-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.featured-image {
+    width: 100%;
+} 
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.featured-text {
+    position: absolute;
+    margin: 6.25rem;
+    max-width: 50%;
+    padding-right: 6.5rem;
+}
+
+.featured-text h1 {
+    font-family: 'Integral CF', sans-serif;
+    color: #000000;
+    font-weight: 700;
+    font-size: 4vw;
+    line-height: 4vw;
+    margin-bottom: 1rem;
+}
+
+.featured-text p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.shop-now-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 62px;
+    text-decoration: none;
+    border: 1px solid black;
+}
+.shop-now-btn:hover, .shop-now-btn:focus{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Brands Section */
+
+.brands{
+    background-color: #000000;
+    color:#ffffff;
+}
+
+.brands-content{
+    margin:0 75px;
+}
+
+.brands-content ul {
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    padding: 2rem;
+    list-style: none;
+}
+
+.brands-content img {
+    max-width: 150px;
+}
+
+/* New Arrivals Section */
+.new-arrivals, 
+.dress-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+}
+
+.new-arrivals-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:20px;
+    width: 100%;
+}
+
+.new-arrivals-container article{
+    width: 295px;
+    height: 298px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.new-arrivals-container article a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.new-arrivals-container article a img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.new-arrivals-container article a h3{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+.view-all-btn-container {
+    margin-top: 10%;
+}
+.view-all-btn {
+    padding: 0.75rem 2rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 62px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.view-all-btn:hover, .view-all-btn:focus {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Dress Style Section */
+
+.dress-style{
+    border-radius: 40px;
+    background: rgba(240, 240, 240, 1);
+}
+
+.dress-style h2 {
+    margin: 5%;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.dress-style-container{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    padding: 0 5% 5% 5%;
+    gap:20px;
+}
+
+.dress-style-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    flex-grow: 1;
+}
+
+/* Images inside the dress-style-item */
+.dress-style-item article {
+    display: flex;
+    justify-content: flex-end; /* Aligns content (image) to the right */
+    
+}
+
+/* Text overlay */
+.dress-style-item h3 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    margin: 0;
+    color: black;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48.6px;
+    text-align: left;
+}
+
+
+
+
+/* Customer Reviews Section */
+ .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    padding: 0 6.25rem;
+}
+
+.reviews-header .arrows-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.slick-slider,
+.slick-list,
+.slick-track,
+.reviews-item {
+   height: 100%;   
+}
+
+.slick-slider{
+    width: 100%;
+}
+.slick-track{
+    display: flex;
+    gap: 20px;
+}
+.slick-slide img{
+    display: inline;
+}
+
+.reviews-container{
+    display: flex;
+    gap:20px;
+}
+
+.reviews-item{
+    display: flex!important;
+    flex-direction: column; 
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 28px 32px;
+    height: auto;
+}
+
+.reviews-item p {
+    font-size: 1rem;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.reviews-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 22px;
+    margin: 10px 0;
+} 
+
+.review-name {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* Newsletter Section */
+.newsletter{
+    display: flex;
+    padding: 50px 100px;
+}
+.newsletter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 36px 64px;
+    border-radius: 20px;
+    width: 100%;
+}
+.newsletter-container h2{
+    color: #ffffff;
+    font-family: Integral CF;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 45px;
+    max-width: 50%;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.email-input{
+    flex-grow: 1;
+}
+
+.newtletter-btn{
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 62px;
+    padding: 12px 16px;
+    width: 100%;
+    border: 1px solid white;
+}
+.newtletter-btn:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+
+
+/* Email form in Newsletter Section*/
+.email-icon, .email-input{
+    background-color:#ffffff;
+    padding: 16px;
+}
+
+.email-icon{
+    border-radius: 50px 0 0 50px;
+}
+
+.email-input{
+    border-radius:0 50px 50px 0;
+    border: none;
+}
+
+.email-input:focus{
+    outline: none;
+}
+
+
+
+
+/* Footer Section */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F0F0;
+	margin-top: -10rem;
+    padding: 10rem 6.25rem 6.25rem 6.25rem;
+}
+
+.footer-content {
+    display: flex;
+    gap:100px;
+}
+
+.footer-content .our-brand {
+    width: 20%;
+}
+
+.footer-content .our-brand .social{
+    display: flex;
+    gap:10px;
+}
+
+.footer-content .sitemap {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.sitemap-section h4{
+    letter-spacing: 3px;
+}
+.sitemap-section ul{
+    padding:unset;
+    list-style: none;
+}
+
+.sitemap-section ul li {
+    line-height: 2.5rem;
+}
+
+.sitemap-section ul li a {
+    color: #00000099;
+    text-decoration: none;
+}
+.sitemap-section ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid #0000001A
+}
+
+.payments{
+    display: flex;
+}
+
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    p {
+        font-size: 0.875rem;
+    }
+    
+    .menu-wrapper {
+        gap: 20px;
+    }
+
+    .nav-bar {
+        justify-content: space-between;
+    }
+
+    .search-cart-profile {
+        flex-grow: 0;
+    }
+    
+    .mobile-menu {
+        display: flex;/* show hamburger menu style on large screens*/
+    }
+
+    .nav-links {
+        display: none; /* Hide menu by default */
+        flex-direction: column; /* Stack items */
+        position: absolute; /* Position the menu */
+        top: 60px; /* Below the navbar */
+        left: 0;
+        right: 0;
+        color: white;
+        background-color: #333;
+        z-index: 10; /* Ensure menu appears above other elements */
+    }
+
+    .nav-links.show {
+        display: flex; /* Show menu when active */
+        background-color: white;
+        padding: 20px;
+    }
+
+    .nav-links a {
+        color: black;
+    }
+
+    .search-input{
+        display: none;
+    }
+
+    .featured-container {
+        flex-direction: column;
+    }
+
+    .featured-text{
+        position: initial;
+        margin: initial;
+        padding: initial;
+    }
+
+    .featured-text, .featured-image {
+        max-width: 100%;
+        background-color: #F2F0F1;
+    }
+
+    .featured-text {
+        padding: 3rem 1rem 1rem 1rem;
+    }
+
+    .featured-text h1 {
+        font-size:8vw;
+        line-height:8vw;
+        max-width: 90%;
+    }
+
+    .featured-text p {
+        margin-bottom: 2rem;
+    }
+
+    .shop-now-btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .reviews-header,
+    .reviews-container,
+    .newsletter, 
+    .footer {
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+
+    
+    .new-arrivals,
+    .dress-style{
+        margin: 100px 1rem;
+    }
+
+    .brands-content{
+        margin: 0 1rem;
+    }
+
+    .brands-content ul {
+        padding: 2rem 0;
+    }
+    .brands-content ul li:nth-child(n+4) {
+        display: none;
+    }
+
+    .new-arrivals-container article:nth-child(n+3) {
+        display: none; /* Hides the 3rd and 4th items */    
+    }
+
+    .view-all-btn-container {
+        width: 100%;
+        margin-top: 13%;
+    }
+    
+    .view-all-btn {
+        display: inline-block;
+        width: 100%;
+    }
+ 
+    .reviews-header{
+        align-items: flex-end;
+    }
+
+    .reviews-header h2{
+        margin-bottom: 0;
+    }
+    
+
+    .reviews-container{
+        margin-top: 50px;
+    }
+
+    .newsletter-container {
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+        
+    }
+    .newsletter-container h2{
+        max-width: 100%;
+    }
+
+    .form-wrapper{
+        width:100%;
+    }
+
+    .footer{
+        padding-top: 10rem;
+        padding-bottom: 0rem;
+    }
+
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer-content .our-brand {
+        width: 100%;
+    }
+
+    .footer-content .sitemap {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width:100%;
+        row-gap: 20px;
+    }
+    
+    .sitemap-section {
+        width: 50%;
+    }
+    
+    .footer-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+}
